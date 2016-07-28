@@ -67,5 +67,12 @@ URL | #/sec(1) | (2) | (3)
 --- | --- | --- | ---
 /2 | 3705.13 | 3929.37 | 3866.74
 
-
+## グラフ
 ![ベンチ結果](img/bench.png)
+
+## まとめ
+特定の処理を単一プロセスだけで行うようなロジックだと、アクセス集中時にそのプロセスがつまって全体のパフォーマンスが落ちる(= /*_direct の方が速い)だろうと予想していたけど、単純なデータ授受ぐらいだと文字列生成の方がよっぽど重いというのは想定外だった。
+
+[Agent/ETS に突っ込むデータが 64 バイトよりも大きいので、Shared Heap に入っている](https://hamidreza-s.github.io/erlang%20garbage%20collection%20memory%20layout%20soft%20realtime/2015/08/24/erlang-garbage-collection-details-and-why-it-matters.html)というのも影響しているだろうけど。
+
+agent の実態は単なる GenServer なので、結果は予想通り。ets は複数プロセスからの同時アクセスに最適化されているような記述がどこかにあったけど、数字を見る限り大きく差があるわけでも無さそう。
