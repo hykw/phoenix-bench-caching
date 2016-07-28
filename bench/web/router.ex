@@ -17,6 +17,11 @@ defmodule Bench.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/ecto", PageController, :ecto
+    get "/agent", PageController, :agent
+    get "/agent_direct", PageController, :agent_direct
+    get "/ets", PageController, :ets
+    get "/ets_direct", PageController, :ets_direct
   end
 
   # Other scopes may use custom stacks.

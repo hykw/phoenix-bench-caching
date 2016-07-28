@@ -16,13 +16,25 @@ Ecto/Agent/ETSの速度差比較
 - 動作確認
 -- `mix phoenix.server`
 
+- model とテストの準備
+  - `mix phoenix.gen.model Cache cache code:integer str:string`
+  - `vi priv/repo/migrations/20160728052304_create_cache.exs`
+  - `mix ecto.migrate`
+  - `vi priv/repo/seeds.exs`
+  - `mix run priv/repo/seeds.exs`
+
+
 ## ベンチする内容
 
 Agent/ETS には、起動時に Ecto からデータを読み込んでセットする
 
-- 素のトップページ
-- Ectoからデータを読み込んで、テンプレートにセット
-- プロセス経由でAgentにあるデータを読み込んで、テンプレートにセット
-  - Agentに直接アクセスして、テンプレートにセット
-- プロセス経由でETSにあるデータを読み込んで、テンプレートにセット
-  - ETSに直接アクセスして、テンプレートにセット
+- /: 素のトップページ
+- /ecto: Ectoからデータを読み込んで、テンプレートにセット
+- /agent: プロセス経由でAgentにあるデータを読み込んで、テンプレートにセット
+  - /agent_direct: Agentに直接アクセスして、テンプレートにセット
+- /ets: プロセス経由でETSにあるデータを読み込んで、テンプレートにセット
+  - /etc_direct: ETSに直接アクセスして、テンプレートにセット
+
+## ベンチ方法
+ab でいいや
+

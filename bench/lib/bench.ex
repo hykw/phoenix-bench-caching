@@ -14,6 +14,8 @@ defmodule Bench do
       supervisor(Bench.Endpoint, []),
       # Start your own worker by calling: Bench.Worker.start_link(arg1, arg2, arg3)
       # worker(Bench.Worker, [arg1, arg2, arg3]),
+      worker(Bench.AgentProc, []),
+      worker(Bench.ETSProc, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
