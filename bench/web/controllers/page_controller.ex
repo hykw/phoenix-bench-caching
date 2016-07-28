@@ -10,6 +10,7 @@ defmodule Bench.PageController do
   @name_ets :ets
   @key_code "code"
 
+  @str String.duplicate("あいうえおかきくけこ", 10_000)
 
   # renderのベンチをしたいわけじゃないので、trim
   defp truncate(str) do
@@ -26,6 +27,11 @@ defmodule Bench.PageController do
 
   def index(conn, _params) do
     param = get_param(String.duplicate("あいうえおかきくけこ", 10_000))
+    render(conn, "index.html", param)
+  end
+
+  def index2(conn, _) do
+    param = get_param(@str)
     render(conn, "index.html", param)
   end
 

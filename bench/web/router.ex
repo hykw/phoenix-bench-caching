@@ -17,6 +17,8 @@ defmodule Bench.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/2", PageController, :index2
+
     get "/ecto", PageController, :ecto
     get "/agent", PageController, :agent
     get "/agent_direct", PageController, :agent_direct
