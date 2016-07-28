@@ -14,7 +14,7 @@ Ecto/Agent/ETSの速度差比較
 - config/dev.exs に DB の設定、ポートは5000に変更
 - `mix ecto.create`
 - 動作確認
--- `mix phoenix.server`
+  - `mix phoenix.server`
 
 - model とテストの準備
   - `mix phoenix.gen.model Cache cache code:integer str:string`
