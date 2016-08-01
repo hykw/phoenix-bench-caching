@@ -76,3 +76,9 @@ URL | #/sec(1) | (2) | (3)
 [Agent/ETS に突っ込むデータが 64 バイトよりも大きいので、Shared Heap に入っている](https://hamidreza-s.github.io/erlang%20garbage%20collection%20memory%20layout%20soft%20realtime/2015/08/24/erlang-garbage-collection-details-and-why-it-matters.html)というのも影響しているだろうけど。
 
 agent の実態は単なる GenServer なので、結果は予想通り。ets は複数プロセスからの同時アクセスに最適化されているような記述がどこかにあったけど、数字を見る限り大きく差があるわけでも無さそう。
+
+# 追記
+
+どこからどう回ったかわかりませんが、内容について突っ込みをいただきました。Twitter の仕様がよくわからず、へんな返信方法をして表示が無茶苦茶になったのと、知見が埋もれてしまうのがとってももったいないので、まとめさせて頂きました（togetter は togetter で使い方よくわかりませんが）。
+
+http://togetter.com/li/1006574
