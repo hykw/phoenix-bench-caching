@@ -82,3 +82,7 @@ agent の実態は単なる GenServer なので、結果は予想通り。ets �
 どこからどう回ったかわかりませんが、内容について突っ込みをいただきました。Twitter の仕様がよくわからず、へんな返信方法をして表示が無茶苦茶になったのと、知見が埋もれてしまうのがとってももったいないので、まとめさせて頂きました（togetter は togetter で使い方よくわかりませんが）。
 
 http://togetter.com/li/1006574
+
+# 追記2
+
+[ets の lookup 性能をベンチ](https://github.com/hykw/elixir_phoenix-test-confirmation/tree/master/testing/001)しました。
